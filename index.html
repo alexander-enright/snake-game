@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake - Neon Arcade</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="arcade-cabinet">
+        <div class="cabinet-header">
+            <h1>🐍 NEON SNAKE</h1>
+            <div class="score-board">
+                <div class="score">
+                    <span class="label">SCORE</span>
+                    <span id="score">0</span>
+                </div>
+                <div class="high-score">
+                    <span class="label">HIGH</span>
+                    <span id="highScore">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="screen-bezel">
+            <img src="ae-logo.png" alt="AE" class="game-watermark">
+            <canvas id="gameCanvas" width="400" height="400"></canvas>
+            <div id="gameOverlay" class="overlay">
+                <div class="overlay-content">
+                    <h2 id="overlayTitle">SNAKE</h2>
+                    <p id="overlayText">Press SPACE to start</p>
+                    <div class="controls-hint">
+                        <span>↑↓←→ or WASD to move</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls-panel">
+            <div class="d-pad">
+                <button class="d-btn up" onclick="setDirection('up')">▲</button>
+                <button class="d-btn left" onclick="setDirection('left')">◀</button>
+                <button class="d-btn right" onclick="setDirection('right')">▶</button>
+                <button class="d-btn down" onclick="setDirection('down')">▼</button>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="startBtn" class="action-btn start" onclick="startGame()">START</button>
+                <button id="pauseBtn" class="action-btn pause" onclick="togglePause()">PAUSE</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Alex's Arcade © 2026</p>
+    </footer>
+    
+    <script src="app.js"></script>
+</body>
+</html>
